@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.springframework)
+    alias(libs.plugins.dependencymanagement)
+}
+
+group = 'com.celik.foodo'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '21'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.starter.web)
+    testImplementation(libs.starter.test)
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

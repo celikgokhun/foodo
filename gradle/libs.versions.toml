@@ -1,0 +1,37 @@
+[versions]
+springframework = "3.2.1"
+dependencymanagement = "1.1.4"
+postgresql = "42.5.1"
+validation = "3.0.2"
+securitytest = "6.1.5"
+jwt = "4.4.0"
+security-crypto =  "6.1.5"
+lombok = "1.18.30"
+jsonwebtoken = "0.11.5"
+swagger2 = "3.0.0"
+swaggerui = "3.0.0"
+foxbeanvalidators = "3.0.0"
+foxbootstarter = "3.0.0"
+webmvc = "6.0.13"
+
+[libraries]
+data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springframework" }
+starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springframework" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springframework" }
+validation = { module = "jakarta.validation:jakarta.validation-api", version.ref = "validation" }
+starter-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "springframework" }
+security-test = { module = "org.springframework.security:spring-security-test", version.ref = "securitytest" }
+jwt = { module = "com.auth0:java-jwt", version.ref = "jwt" }
+security-crypto = { module = "org.springframework.security:spring-security-crypto", version.ref = "security-crypto" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+jsonwebtoken = { module = "io.jsonwebtoken:jjwt-api", version.ref = "jsonwebtoken" }
+swagger2 = { module = "io.springfox:springfox-swagger2", version.ref = "swagger2" }
+swaggerui = { module = "io.springfox:springfox-swagger-ui", version.ref = "swaggerui" }
+foxbeanvalidators = { module = "io.springfox:springfox-bean-validators", version.ref = "foxbeanvalidators" }
+foxbootstarter = { module = "io.springfox:springfox-boot-starter", version.ref = "foxbootstarter" }
+webmvc = { module = "org.springframework:spring-webmvc", version.ref = "webmvc" }
+
+[plugins]
+springframework = { id = "org.springframework.boot", version.ref = "springframework" }
+dependencymanagement = { id = "io.spring.dependency-management", version.ref = "dependencymanagement" }
