@@ -1,4 +1,4 @@
-package com.celik.foodo.domain.value;
+package com.celik.foodo.domain.valueobject;
 
 import java.util.Objects;
 
