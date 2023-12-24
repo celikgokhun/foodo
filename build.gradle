@@ -17,6 +17,8 @@ repositories {
 
 dependencies {
     implementation(libs.starter.web)
+    implementation(libs.lombok)
+    implementation(libs.logging)
     testImplementation(libs.starter.test)
 }
 

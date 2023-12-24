@@ -32,6 +32,9 @@ foxbeanvalidators = { module = "io.springfox:springfox-bean-validators", version
 foxbootstarter = { module = "io.springfox:springfox-boot-starter", version.ref = "foxbootstarter" }
 webmvc = { module = "org.springframework:spring-webmvc", version.ref = "webmvc" }
 
+logging = { module = "org.springframework.boot:spring-boot-starter-logging", version.ref = "springframework" }
+
+
 [plugins]
 springframework = { id = "org.springframework.boot", version.ref = "springframework" }
 dependencymanagement = { id = "io.spring.dependency-management", version.ref = "dependencymanagement" }
