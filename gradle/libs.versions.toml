@@ -13,6 +13,8 @@ swaggerui = "3.0.0"
 foxbeanvalidators = "3.0.0"
 foxbootstarter = "3.0.0"
 webmvc = "6.0.13"
+springtx= "6.1.2"
+springContext = "6.1.2"
 
 [libraries]
 data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springframework" }
@@ -33,6 +35,8 @@ foxbootstarter = { module = "io.springfox:springfox-boot-starter", version.ref =
 webmvc = { module = "org.springframework:spring-webmvc", version.ref = "webmvc" }
 
 logging = { module = "org.springframework.boot:spring-boot-starter-logging", version.ref = "springframework" }
+springtx = { module = "org.springframework:spring-tx", version.ref = "springtx" }
+springContext = { module = "org.springframework:spring-context", version.ref = "springContext" }
 
 
 [plugins]
