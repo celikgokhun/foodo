@@ -7,6 +7,7 @@ import com.celik.foodo.domain.valueobject.RestaurantId;
 import com.celik.foodo.order.service.domain.dto.create.CreateOrderCommand;
 import com.celik.foodo.order.service.domain.dto.create.CreateOrderResponse;
 import com.celik.foodo.order.service.domain.dto.create.OrderAddress;
+import com.celik.foodo.order.service.domain.dto.track.TrackOrderResponse;
 import com.celik.foodo.order.service.domain.entity.Order;
 import com.celik.foodo.order.service.domain.entity.OrderItem;
 import com.celik.foodo.order.service.domain.entity.Product;
@@ -49,6 +50,14 @@ public class OrderDataMapper {
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
                 .build();
     }
 
