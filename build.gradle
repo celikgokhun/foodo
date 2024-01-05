@@ -19,6 +19,7 @@ dependencies {
     implementation(libs.starter.web)
     implementation(libs.lombok)
     implementation(libs.logging)
+    implementation(libs.mockitocore)
     testImplementation(libs.starter.test)
 }
 
