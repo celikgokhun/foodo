@@ -1,6 +1,8 @@
 package com.celik.foodo.order.service.domain.outbox.model.payment;
 
 import com.celik.foodo.domain.valueobject.OrderStatus;
+import com.celik.foodo.outbox.OutboxStatus;
+import com.celik.foodo.saga.SagaStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

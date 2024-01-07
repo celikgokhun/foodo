@@ -1,6 +1,13 @@
 package com.celik.foodo.order.service.domain.outbox.scheduler.approval;
 
+import com.celik.foodo.domain.valueobject.OrderStatus;
+import com.celik.foodo.order.service.domain.exception.OrderDomainException;
+import com.celik.foodo.order.service.domain.outbox.model.approval.OrderApprovalEventPayload;
 import com.celik.foodo.order.service.domain.outbox.model.approval.OrderApprovalOutboxMessage;
+import com.celik.foodo.order.service.domain.ports.output.repository.ApprovalOutboxRepository;
+import com.celik.foodo.outbox.OutboxStatus;
+import com.celik.foodo.saga.SagaStatus;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -9,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import static com.celik.foodo.saga.order.SagaConstants.ORDER_SAGA_NAME;
 
 
 @Slf4j

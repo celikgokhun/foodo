@@ -1,6 +1,22 @@
 package com.celik.foodo.order.service.domain;
 
+import com.celik.foodo.domain.valueobject.OrderId;
+import com.celik.foodo.domain.valueobject.OrderStatus;
 import com.celik.foodo.domain.valueobject.PaymentStatus;
+import com.celik.foodo.order.service.domain.dto.message.PaymentResponse;
+import com.celik.foodo.order.service.domain.entity.Order;
+import com.celik.foodo.order.service.domain.event.OrderPaidEvent;
+import com.celik.foodo.order.service.domain.exception.OrderDomainException;
+import com.celik.foodo.order.service.domain.exception.OrderNotFoundException;
+import com.celik.foodo.order.service.domain.mapper.OrderDataMapper;
+import com.celik.foodo.order.service.domain.outbox.model.approval.OrderApprovalOutboxMessage;
+import com.celik.foodo.order.service.domain.outbox.model.payment.OrderPaymentOutboxMessage;
+import com.celik.foodo.order.service.domain.outbox.scheduler.approval.ApprovalOutboxHelper;
+import com.celik.foodo.order.service.domain.outbox.scheduler.payment.PaymentOutboxHelper;
+import com.celik.foodo.order.service.domain.ports.output.repository.OrderRepository;
+import com.celik.foodo.outbox.OutboxStatus;
+import com.celik.foodo.saga.SagaStatus;
+import com.celik.foodo.saga.SagaStep;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,10 +26,7 @@ import java.time.ZonedDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.celik.foodo.domain.valueobject.OrderStatus.CANCELLED;
-import static com.celik.foodo.domain.valueobject.PaymentStatus.COMPLETED;
-import static com.celik.foodo.domain.valueobject.PaymentStatus.FAILED;
-import static com.food.ordering.system.domain.DomainConstants.UTC;
+import static com.celik.foodo.domain.DomainConstants.UTC;
 
 @Slf4j
 @Component
@@ -132,8 +145,7 @@ public class OrderPaymentSaga implements SagaStep<PaymentResponse> {
         return domainEvent;
     }
 
-    private SagaStatus[] getCurrentSagaStatus(Pay
-                                                      mentStatus paymentStatus) {
+    private SagaStatus[] getCurrentSagaStatus(PaymentStatus paymentStatus) {
         return switch (paymentStatus) {
             case COMPLETED -> new SagaStatus[] { SagaStatus.STARTED };
             case CANCELLED -> new SagaStatus[] { SagaStatus.PROCESSING };
