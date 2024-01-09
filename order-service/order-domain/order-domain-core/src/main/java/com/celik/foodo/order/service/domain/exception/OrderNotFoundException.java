@@ -1,6 +1,5 @@
 package com.celik.foodo.order.service.domain.exception;
 
-
 import com.celik.foodo.domain.exception.DomainException;
 
 public class OrderNotFoundException extends DomainException {
