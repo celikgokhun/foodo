@@ -14,10 +14,23 @@
     <properties>
     </properties>
 
+
     <dependencies>
         <dependency>
             <groupId>com.celik.foodo</groupId>
             <artifactId>order-application-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.celik.foodo</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.celik.foodo</groupId>
+            <artifactId>kafka-consumer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.celik.foodo</groupId>
+            <artifactId>kafka-model</artifactId>
         </dependency>
     </dependencies>
 
