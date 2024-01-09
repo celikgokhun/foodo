@@ -1,4 +1,4 @@
-package com.celik.foodo.system.application.handler;
+package com.celik.foodo.application.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

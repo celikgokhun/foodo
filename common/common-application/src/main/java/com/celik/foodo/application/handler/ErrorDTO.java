@@ -1,4 +1,4 @@
-package com.celik.foodo.system.application.handler;
+package com.celik.foodo.application.handler;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -2,8 +2,8 @@ package com.celik.foodo.order.service.application.exception.handler;
 
 import com.celik.foodo.order.service.domain.exception.OrderDomainException;
 import com.celik.foodo.order.service.domain.exception.OrderNotFoundException;
-import com.celik.foodo.system.application.handler.ErrorDTO;
-import com.celik.foodo.system.application.handler.GlobalExceptionHandler;
+import com.celik.foodo.application.handler.ErrorDTO;
+import com.celik.foodo.application.handler.GlobalExceptionHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
