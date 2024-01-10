@@ -18,7 +18,6 @@
     </properties>
 
     <modules>
-        <module>order-domain-core</module>
         <module>order-application-service</module>
         <module>order-domain-core</module>
     </modules>

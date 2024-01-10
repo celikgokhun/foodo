@@ -18,7 +18,4 @@
         <module>payment-container</module>
     </modules>
 
-    <properties>
-    </properties>
-
 </project>
